@@ -24,20 +24,32 @@
           "samples": []
         },
         {
-          "name": "AddDrink",
+          "name": "Water",
           "slots": [
             {
-              "name": "Milliliters",
+              "name": "CC",
               "type": "AMAZON.NUMBER"
             }
           ],
           "samples": [
-            "{Milliliters} milliliters of distilled",
-            "{Milliliters} milliliters of water",
-            "{Milliliters} milliliters of distilled water",
+            "{CC} CC of distilled",
+            "{CC} CC of water",
+            "{CC} CC of distilled water",
             "distilled",
             "water",
-            "distilled water"
+            "distilled water",
+            "I'm drinking {CC} CC of distilled",
+            "I'm drinking {CC} CC of water",
+            "I'm drinking {CC} CC of distilled water",
+            "I'm drinking distilled",
+            "I'm drinking water",
+            "I'm drinking distilled water",
+            "I drank {CC} CC of distilled",
+            "I drank {CC} CC of water",
+            "I drank {CC} CC of distilled water",
+            "I drank distilled",
+            "I drank water",
+            "I drank distilled water"
           ]
         },
         {
@@ -114,12 +126,12 @@
     "dialog": {
       "intents": [
         {
-          "name": "AddDrink",
+          "name": "Water",
           "confirmationRequired": false,
           "prompts": {},
           "slots": [
             {
-              "name": "Milliliters",
+              "name": "CC",
               "type": "AMAZON.NUMBER",
               "elicitationRequired": true,
               "confirmationRequired": false,
@@ -153,7 +165,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "How many milliliters of water?"
+            "value": "How many CC of water?"
           }
         ]
       },
