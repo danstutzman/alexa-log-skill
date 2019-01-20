@@ -36,6 +36,44 @@
           ]
         },
         {
+          "name": "salt_tablet",
+          "samples": [
+            "a tablet of salt",
+            "a salt tablet",
+            "salt tablet"
+          ]
+        },
+        {
+          "name": "sleep_attempt",
+          "samples": [
+            "I'm trying to sleep",
+            "I'm going to bed",
+            "I'm going to try to sleep",
+            "I'm getting in bed"
+          ]
+        },
+        {
+          "name": "sleep_failure",
+          "samples": [
+            "I'm still awake",
+            "I'm having insomnia"
+          ]
+        },
+        {
+          "name": "sleep_duration",
+          "slots": [
+            {
+              "name": "Duration",
+              "type": "AMAZON.DURATION"
+            }
+          ],
+          "samples": [
+            "I slept",
+            "I slept {Duration}",
+            "I slept for {Duration}"
+          ]
+        },
+        {
           "name": "water",
           "slots": [
             {
@@ -132,7 +170,7 @@
           ]
         },
         {
-          "name": "Salt",
+          "name": "sea_salt",
           "slots": [
             {
               "name": "Milligrams",
@@ -140,8 +178,8 @@
             }
           ],
           "samples": [
-            "{Milligrams} milligrams of salt",
-            "salt"
+            "{Milligrams} milligrams of sea salt",
+            "sea salt"
           ]
         }
       ],
@@ -166,7 +204,7 @@
           ]
         },
         {
-          "name": "Salt",
+          "name": "sea_salt",
           "confirmationRequired": false,
           "prompts": {},
           "slots": [
@@ -196,6 +234,22 @@
               }
             }
           ]
+        },
+        {
+          "name": "sleep_duration",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Duration",
+              "type": "AMAZON.DURATION",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.2.1"
+              }
+            }
+          ]
         }
       ]
     },
@@ -215,6 +269,15 @@
           {
             "type": "PlainText",
             "value": "How many CC?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.2.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How long did you sleep?"
           }
         ]
       },
