@@ -115,20 +115,14 @@
           ]
         },
         {
-          "name": "PeaProtein",
+          "name": "pea_protein",
           "slots": [
             {
               "name": "Scoops",
               "type": "AMAZON.NUMBER"
-            },
-            {
-              "name": "Grams",
-              "type": "AMAZON.NUMBER"
             }
           ],
           "samples": [
-            "{Grams} grams of pea protein",
-            "{Scoops} scoop of pea protein",
             "{Scoops} scoops of pea protein",
             "pea protein"
           ]
@@ -250,6 +244,22 @@
               }
             }
           ]
+        },
+        {
+          "name": "pea_protein",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Scoops",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.3.1"
+              }
+            }
+          ]
         }
       ]
     },
@@ -282,6 +292,15 @@
         ]
       },
       {
+        "id": "Elicit.Slot.3.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many scoops?"
+          }
+        ]
+      },
+      {
         "id": "Elicit.Slot.889341151593.30328102408",
         "variations": [
           {
@@ -291,20 +310,11 @@
         ]
       },
       {
-        "id": "Elicit.Slot.889341151593.558872456369",
-        "variations": [
-          {
-            "type": "PlainText",
-            "value": "How many milligrams of salt?"
-          }
-        ]
-      },
-      {
         "id": "Elicit.Slot.738824673557.922659013055",
         "variations": [
           {
             "type": "PlainText",
-            "value": "How many milligrams of salt?"
+            "value": "How many milligrams?"
           }
         ]
       }
