@@ -103,6 +103,19 @@
           ]
         },
         {
+          "name": "apple_juice",
+          "slots": [
+            {
+              "name": "CC",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{CC} CC of apple juice",
+            "apple juice"
+          ]
+        },
+        {
           "name": "number_one",
           "slots": [
             {
@@ -128,51 +141,84 @@
           ]
         },
         {
-          "name": "Rice",
+          "name": "rice",
           "slots": [
             {
-              "name": "Grams",
+              "name": "grams",
               "type": "AMAZON.NUMBER"
             }
           ],
           "samples": [
             "rice",
             "white rice",
-            "{Grams} grams of rice",
-            "{Grams} grams of white rice"
+            "{grams} grams of rice",
+            "{grams} grams of white rice"
           ]
         },
         {
-          "name": "OliveOil",
+          "name": "olive_oil",
           "slots": [
             {
-              "name": "Grams",
-              "type": "AMAZON.NUMBER"
-            },
-            {
-              "name": "Milliliters",
+              "name": "grams",
               "type": "AMAZON.NUMBER"
             }
           ],
           "samples": [
-            "{Milliliters} milliliters of extra-virgin olive oil",
-            "{Milliliters} milliliters of olive oil",
-            "{Grams} grams of extra-virgin olive oil",
-            "{Grams} grams of olive oil",
+            "{grams} grams of extra-virgin olive oil",
+            "{grams} grams of olive oil",
             "extra-virgin olive oil",
             "olive oil"
+          ]
+        },
+        {
+          "name": "grape_seed_oil",
+          "slots": [
+            {
+              "name": "grams",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{grams} grams of grape seed oil",
+            "grape seed oil"
+          ]
+        },
+        {
+          "name": "butter",
+          "slots": [
+            {
+              "name": "grams",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{grams} grams of butter",
+            "butter"
+          ]
+        },
+        {
+          "name": "carrot",
+          "slots": [
+            {
+              "name": "grams",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{grams} grams of carrot",
+            "carrot"
           ]
         },
         {
           "name": "sea_salt",
           "slots": [
             {
-              "name": "Milligrams",
+              "name": "milligrams",
               "type": "AMAZON.NUMBER"
             }
           ],
           "samples": [
-            "{Milligrams} milligrams of sea salt",
+            "{milligrams} milligrams of sea salt",
             "sea salt"
           ]
         }
@@ -203,7 +249,7 @@
           "prompts": {},
           "slots": [
             {
-              "name": "Milligrams",
+              "name": "milligrams",
               "type": "AMAZON.NUMBER",
               "elicitationRequired": true,
               "confirmationRequired": false,
@@ -225,6 +271,22 @@
               "confirmationRequired": false,
               "prompts": {
                 "elicitation": "Elicit.Slot.1.1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "apple_juice",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "CC",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.8.1"
               }
             }
           ]
@@ -257,6 +319,86 @@
               "confirmationRequired": false,
               "prompts": {
                 "elicitation": "Elicit.Slot.3.1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "olive_oil",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "grams",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.4.1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "butter",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "grams",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.7.1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "rice",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "grams",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.5.1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "grape_seed_oil",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "grams",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.6.1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "carrot",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "grams",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.7.1"
               }
             }
           ]
@@ -301,6 +443,42 @@
         ]
       },
       {
+        "id": "Elicit.Slot.4.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many grams?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.5.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many grams?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.6.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many grams?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.7.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many grams?"
+          }
+        ]
+      },
+      {
         "id": "Elicit.Slot.889341151593.30328102408",
         "variations": [
           {
@@ -315,6 +493,15 @@
           {
             "type": "PlainText",
             "value": "How many milligrams?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.8.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many CC?"
           }
         ]
       }

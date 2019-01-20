@@ -45,7 +45,7 @@ exports.handler = function(event, context) {
       sendPromise
         .then(data => {
           console.log('Successful send.  MessageId: ', data.MessageId);
-          const response = generateResponse(buildSpeechletResponse(condensedValues.join(' ').replace('_', ' '), false));
+          const response = generateResponse(buildSpeechletResponse(condensedValues.join(' ').replace(/_/g, ' '), false));
           console.log('response', JSON.stringify(response));
           context.succeed(response);
         })
