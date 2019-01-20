@@ -24,6 +24,17 @@
           "samples": []
         },
         {
+          "name": "Correction",
+          "samples": [
+            "erase that",
+            "delete that",
+            "erase that last log",
+            "delete that last log",
+            "to erase that last log",
+            "to delete that last log"
+          ]
+        },
+        {
           "name": "Water",
           "slots": [
             {
