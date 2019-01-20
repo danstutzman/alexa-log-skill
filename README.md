@@ -1,0 +1,4 @@
+- npm install -g ask-cli
+- Make sure ~/.aws/config exists
+- ask init
+- ask deploy

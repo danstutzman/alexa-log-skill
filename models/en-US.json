@@ -1,0 +1,189 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "log",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AddDrink",
+          "slots": [
+            {
+              "name": "Milliliters",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{Milliliters} milliliters of distilled",
+            "{Milliliters} milliliters of water",
+            "{Milliliters} milliliters of distilled water",
+            "distilled",
+            "water",
+            "distilled water"
+          ]
+        },
+        {
+          "name": "PeaProtein",
+          "slots": [
+            {
+              "name": "Scoops",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "Grams",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{Grams} grams of pea protein",
+            "{Scoops} scoop of pea protein",
+            "{Scoops} scoops of pea protein",
+            "pea protein"
+          ]
+        },
+        {
+          "name": "Rice",
+          "slots": [
+            {
+              "name": "Grams",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "rice",
+            "white rice",
+            "{Grams} grams of rice",
+            "{Grams} grams of white rice"
+          ]
+        },
+        {
+          "name": "OliveOil",
+          "slots": [
+            {
+              "name": "Grams",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "Milliliters",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{Milliliters} milliliters of extra-virgin olive oil",
+            "{Milliliters} milliliters of olive oil",
+            "{Grams} grams of extra-virgin olive oil",
+            "{Grams} grams of olive oil",
+            "extra-virgin olive oil",
+            "olive oil"
+          ]
+        },
+        {
+          "name": "Salt",
+          "slots": [
+            {
+              "name": "Milligrams",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{Milligrams} milligrams of salt",
+            "salt"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "AddDrink",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Milliliters",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.856666946381.1362711506089"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Salt",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Milligrams",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.738824673557.922659013055"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.856666946381.1362711506089",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many milliliters of water?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.889341151593.30328102408",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many milliliters of water?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.889341151593.558872456369",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many milligrams of salt?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.738824673557.922659013055",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many milligrams of salt?"
+          }
+        ]
+      }
+    ]
+  }
+}

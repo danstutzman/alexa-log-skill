@@ -1,0 +1,33 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.1be37599-ee49-4a3e-979e-4cb1efd0b834",
+      "was_cloned": false,
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "bd4b3307949070f275477b3644ba8018"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "6e75e073390cd46526a75bb93af0d032"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:553826207523:function:AlexaLogSkillSendsEmail",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/us-east-1_AlexaLogSkillSendsEmail",
+            "functionName": "AlexaLogSkillSendsEmail",
+            "handler": "index.handler",
+            "revisionId": "9438aa91-82bc-47a7-8593-6394e85615fb",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
+    }
+  }
+}
