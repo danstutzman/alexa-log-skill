@@ -19,40 +19,40 @@ exports.handler = function(event, context) {
       console.log('response', JSON.stringify(response));
       context.succeed(response);
     } else {
+      let condensed = { what: request.intent.name };
+      let condensedValues = [request.intent.name];
+      for (const slotName of Object.keys(request.intent.slots || {})) {
+        const slotValue = request.intent.slots[slotName].value;
+        condensed[slotName] = slotValue;
+        condensedValues.push(slotValue);
+      }
+
       const params = {
-      Destination: {
-        ToAddresses: ['dtstutz@gmail.com']
-      },
-      Message: {
-        Body: {
-          Text: {
-            Charset: "UTF-8",
-            Data: 'Intent: ' + JSON.stringify(request.intent)
-          }
+        Destination: { ToAddresses: ['dtstutz+alexa+log@gmail.com'] },
+        Message: {
+          Body: {
+            Text: { Charset: "UTF-8", Data: JSON.stringify(request.intent) }
+          },
+          Subject: { Charset: "UTF-8", Data: JSON.stringify(condensed) }
         },
-        Subject: {
-          Charset: "UTF-8",
-          Data: "Subject"
-        }
-      },
-      Source: "Alexa Log skill <dtstutz@gmail.com>"
-    };
+        Source: "Alexa Log skill <dtstutz@gmail.com>"
+      };
   
-    const sendPromise = new AWS.SES({ apiVersion: "2010-12-01" })
-      .sendEmail(params)
-      .promise();
-  
-    sendPromise
-      .then(data => {
-        console.log('Successful send.  MessageId: ', data.MessageId);
-        const response = generateResponse(buildSpeechletResponse("Okay, more?", false));
-        console.log('response', JSON.stringify(response));
-        context.succeed(response);
-      })
-      .catch(err => {
-        console.error(err, err.stack);
-        context.done(null, "Failed");
-      });
+      const sendPromise = new AWS.SES({ apiVersion: "2010-12-01" })
+        .sendEmail(params)
+        .promise();
+    
+      sendPromise
+        .then(data => {
+          console.log('Successful send.  MessageId: ', data.MessageId);
+          const response = generateResponse(buildSpeechletResponse(condensedValues.join(' '), false));
+          console.log('response', JSON.stringify(response));
+          context.succeed(response);
+        })
+        .catch(err => {
+          console.error(err, err.stack);
+          context.done(null, "Failed");
+        });
     }
   }
 };
