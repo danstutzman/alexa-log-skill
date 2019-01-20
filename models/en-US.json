@@ -44,6 +44,17 @@
           ]
         },
         {
+          "name": "exercise_walk",
+          "samples": [
+            "I'm going for a walk",
+            "I'm talking a walk",
+            "walk",
+            "I went for a walk",
+            "I was walking",
+            "I'm back from my walk"
+          ]
+        },
+        {
           "name": "sleep_attempt",
           "samples": [
             "I'm trying to sleep",
@@ -71,6 +82,19 @@
             "I slept",
             "I slept {Duration}",
             "I slept for {Duration}"
+          ]
+        },
+        {
+          "name": "vitamin_d",
+          "slots": [
+            {
+              "name": "IU",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "Vitamin D",
+            "{IU} IU of Vitamin D"
           ]
         },
         {
@@ -286,7 +310,7 @@
               "elicitationRequired": true,
               "confirmationRequired": false,
               "prompts": {
-                "elicitation": "Elicit.Slot.8.1"
+                "elicitation": "Elicit.Slot.1.1"
               }
             }
           ]
@@ -402,6 +426,22 @@
               }
             }
           ]
+        },
+        {
+          "name": "vitamin_d",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "IU",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.8.1"
+              }
+            }
+          ]
         }
       ]
     },
@@ -475,6 +515,15 @@
           {
             "type": "PlainText",
             "value": "How many grams?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.8.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many IU?"
           }
         ]
       },

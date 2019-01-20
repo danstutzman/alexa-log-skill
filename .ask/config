@@ -10,7 +10,7 @@
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "3d937106860e1981aad9c5fdf9eae2a6"
+            "eTag": "11ac3d1de16c17ec2db6552f083fd5b3"
           }
         },
         "lambda": [
@@ -23,7 +23,7 @@
             "codeUri": "lambda/us-east-1_AlexaLogSkillSendsEmail",
             "functionName": "AlexaLogSkillSendsEmail",
             "handler": "index.handler",
-            "revisionId": "7d1b3557-daae-4ad1-90fe-ae178b3d1803",
+            "revisionId": "4c214880-5f40-4c17-a104-3daf69c90a4a",
             "runtime": "nodejs8.10"
           }
         ]
