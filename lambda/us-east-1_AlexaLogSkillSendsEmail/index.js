@@ -28,7 +28,7 @@ exports.handler = function(event, context) {
       }
 
       const params = {
-        Destination: { ToAddresses: ['dtstutz+alexa+log@gmail.com'] },
+        Destination: { ToAddresses: ['user2152+alexa+log@gmail.com'] },
         Message: {
           Body: {
             Text: { Charset: "UTF-8", Data: JSON.stringify(request.intent) }
