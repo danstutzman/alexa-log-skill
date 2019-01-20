@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "log",
+      "invocationName": "journal",
       "intents": [
         {
           "name": "AMAZON.FallbackIntent",
@@ -24,8 +24,9 @@
           "samples": []
         },
         {
-          "name": "Correction",
+          "name": "correction",
           "samples": [
+            "correction",
             "erase that",
             "delete that",
             "erase that last log",
@@ -35,7 +36,7 @@
           ]
         },
         {
-          "name": "Water",
+          "name": "water",
           "slots": [
             {
               "name": "CC",
@@ -61,6 +62,18 @@
             "I drank distilled",
             "I drank water",
             "I drank distilled water"
+          ]
+        },
+        {
+          "name": "number_one",
+          "slots": [
+            {
+              "name": "CC",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "number one"
           ]
         },
         {
@@ -137,7 +150,7 @@
     "dialog": {
       "intents": [
         {
-          "name": "Water",
+          "name": "water",
           "confirmationRequired": false,
           "prompts": {},
           "slots": [
@@ -167,6 +180,22 @@
               }
             }
           ]
+        },
+        {
+          "name": "number_one",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "CC",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1.1"
+              }
+            }
+          ]
         }
       ]
     },
@@ -176,7 +205,16 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "How many CC of water?"
+            "value": "How many CC?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1.1",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How many CC?"
           }
         ]
       },
